@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
 URL:		http://lgames.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.0.0
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +26,10 @@ LPairs - klasyczna gra pamiêciowa pod Linuksa.
 	configure.in
 
 %build
+%{__aclocal}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
