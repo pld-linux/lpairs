@@ -2,7 +2,7 @@ Summary:	LPairs - a classic memory game for Linux
 Summary(pl):	LPairs - klasyczna gra pamiêciowa pod Linuksa
 Name:		lpairs
 Version:	1.0.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
@@ -21,6 +21,9 @@ LPairs - klasyczna gra pamiêciowa pod Linuksa.
 %prep
 %setup -q
 
+%{__perl} -pi -e 's@^inst_dir=\$datadir/games/lpairs$@inst_dir=\$datadir/lpairs@' \
+	configure.in
+
 %build
 %{__autoconf}
 %configure
@@ -29,7 +32,8 @@ LPairs - klasyczna gra pamiêciowa pod Linuksa.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -38,4 +42,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/games/%{name}
+%{_datadir}/%{name}
