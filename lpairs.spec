@@ -21,10 +21,7 @@ LPairs - klasyczna gra pamiêciowa pod Linuksa.
 %setup -q
 
 %build
-#aclocal
 %{__autoconf}
-#autoheader
-#%{__automake}
 %configure
 %{__make}
 
