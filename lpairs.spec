@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
+# Source0-md5:	6d78aa89fe6667fdd25b8cfbb40dad8c
 URL:		http://lgames.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.0.0
 BuildRequires:	autoconf
