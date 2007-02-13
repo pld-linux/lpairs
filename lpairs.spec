@@ -1,5 +1,5 @@
 Summary:	LPairs - a classic memory game for Linux
-Summary(pl.UTF-8):   LPairs - klasyczna gra pamięciowa pod Linuksa
+Summary(pl.UTF-8):	LPairs - klasyczna gra pamięciowa pod Linuksa
 Name:		lpairs
 Version:	1.0.1
 Release:	2
