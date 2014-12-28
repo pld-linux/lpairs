@@ -11,7 +11,7 @@ URL:		http://lgames.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.0.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
