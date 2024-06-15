@@ -1,19 +1,18 @@
 Summary:	LPairs - a classic memory game for Linux
 Summary(pl.UTF-8):	LPairs - klasyczna gra pamięciowa pod Linuksa
 Name:		lpairs
-Version:	1.0.4
-Release:	2
+Version:	1.0.5
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://downloads.sourceforge.net/lgames/%{name}-%{version}.tar.gz
-# Source0-md5:	5eb00da9f7fc15dc5ce840c312e76cfa
-Patch0:		%{name}-inline.patch
-URL:		http://lgames.sourceforge.net/LPairs
+Source0:	https://downloads.sourceforge.net/lgames/%{name}-%{version}.tar.gz
+# Source0-md5:	1329af0550520fd0bc377b8c52602551
+URL:		https://lgames.sourceforge.net/LPairs
 BuildRequires:	SDL-devel >= 1.0.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-tools
-BuildRequires:	perl-base
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,10 +23,8 @@ LPairs - klasyczna gra pamięciowa pod Linuksa.
 
 %prep
 %setup -q
-%patch0 -p1
 
-%{__perl} -pi -e 's@^inst_dir=\$datadir/games/lpairs$@inst_dir=\$datadir/lpairs@' \
-	configure.in
+%{__sed} -i -e 's,^inst_dir=\$datadir/games/lpairs,inst_dir=$datadir/lpairs,' configure.in
 
 %build
 %{__gettextize}
